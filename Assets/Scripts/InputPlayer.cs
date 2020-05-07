@@ -7,19 +7,17 @@ public class InputPlayer : MonoBehaviour
 {
     // Definimos las variables de las distintas acciones que tendra el usuario
     // en el juego
-    public float ejeHorizontal;
-    public float ejeVertical;
-    public bool atacar;
-    public bool habilidad1;
-    public bool habilidad2;
-    public bool inventario;
-    public bool interactuar;
+    [HideInInspector] public float ejeHorizontal;
+    [HideInInspector] public float ejeVertical;
+    [HideInInspector] public bool atacar;
+    [HideInInspector] public bool habilidad1;
+    [HideInInspector] public bool habilidad2;
+    [HideInInspector] public bool inventario;
+    [HideInInspector] public bool interactuar;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Ocultamos nuestras variables publicas del proyecto con el atributo
+    // HideInInspector
+
 
     // Update is called once per frame
     void Update()
@@ -33,7 +31,6 @@ public class InputPlayer : MonoBehaviour
         habilidad2 = Input.GetButtonDown("Habilidad2");
         inventario = Input.GetButtonDown("Inventario");
         interactuar = Input.GetButtonDown("Interactuar");
-        Debug.Log(inventario);
 
         // Obtenemos y definimos los ejes de movimiento
         ejeHorizontal = Input.GetAxis("Horizontal");
